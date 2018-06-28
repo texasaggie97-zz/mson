@@ -24,4 +24,4 @@ If you have any suggestions or questions about **Mark's JSON** feel free to emai
 at github@markesilva.com.
 
 If you encounter any errors or problems with **Mark's JSON**, please let me know!
-Open an Issue at the GitHub http://github.com/texasaggie97/mson main repository.
+Open an Issue at the GitHub https://github.com/texasaggie97/mson main repository.

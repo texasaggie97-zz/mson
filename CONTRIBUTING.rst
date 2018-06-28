@@ -84,7 +84,7 @@ To get tox, just pip install it.
 
 6. Submit a pull request through the GitHub website.
 
-.. _Fork: https://github.com/Nekroze/mson/fork
+.. _Fork: https://github.com/texasaggie97/mson/fork
 
 Pull Request Guidelines
 -----------------------

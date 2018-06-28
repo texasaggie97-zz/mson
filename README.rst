@@ -2,9 +2,6 @@
 Mark's JSON
 =============================
 
-.. image:: https://badge.fury.io/py/mson.png
-    :target: http://badge.fury.io/py/mson
-
 .. image:: https://travis-ci.org/texasaggie97/mson.png?branch=master
     :target: https://travis-ci.org/texasaggie97/mson
 
