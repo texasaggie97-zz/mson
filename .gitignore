@@ -102,3 +102,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# SlickEdit
+SlickEdit/mson.vpwhist
+SlickEdit/mson.vtg
