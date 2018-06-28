@@ -27,9 +27,12 @@ class TestMson(object):
 
     def test_basic(self):
         assert mson.dumps(['foo', {'bar': ('baz', None, 1.0, 2)}]) == '["foo", {"bar": ["baz", null, 1.0, 2]}]'
-        # assert mson.dumps('\"foo/bar') == '\"foo/bar'
-        # assert mson.dumps('\u1234') == "\u1234"
-        # assert mson.dumps('\\') == "\\"
+        # >>> print(mson.dumps("\"foo\bar"))
+        # "\"foo\bar"
+        # >>> print(mson.dumps('\u1234'))
+        # "\u1234"
+        # >>> print(mson.dumps('\\'))
+        # "\\"
         assert mson.dumps({"c": 0, "b": 0, "a": 0}, sort_keys=True) == '{"a": 0, "b": 0, "c": 0}'
         io = StringIO()
         mson.dump(['streaming API'], io)
