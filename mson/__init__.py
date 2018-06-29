@@ -8,11 +8,6 @@ from json.decoder import JSONDecoder  # noqa: F401
 from json.encoder import JSONEncoder  # noqa: F401
 import re
 
-# whole line comment
-comment_re = re.compile(r'^(\s*#.*$)')
-comma_re = re.compile(r',(\s*[\}|\]])')
-
-
 def detect_encoding(b):
     return json.detect_encoding(b)
 
@@ -138,6 +133,11 @@ def load(fp, *, cls=None, object_hook=None, parse_float=None,
     return loads(
         fp.read(), cls=cls, object_hook=object_hook, parse_float=parse_float,
         parse_int=parse_int, parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+
+
+# whole line comment
+comment_re = re.compile(r'^(\s*#.*$)')
+comma_re = re.compile(r',(\s*[\}|\]])')
 
 
 def loads(s, *, cls=None, object_hook=None, parse_float=None,
