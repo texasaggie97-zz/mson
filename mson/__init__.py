@@ -8,6 +8,7 @@ from json.decoder import JSONDecoder  # noqa: F401
 from json.encoder import JSONEncoder  # noqa: F401
 import re
 
+
 def detect_encoding(b):
     return json.detect_encoding(b)
 
