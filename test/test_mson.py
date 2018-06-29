@@ -38,9 +38,11 @@ class TestMson(object):
         mson.dump(['streaming API'], io)
         assert io.getvalue() == '["streaming API"]'
 
+
     def test_basic_encoding(self):
         mydict = {'4': 5, '6': 7}
         assert mson.dumps([1,2,3,mydict], separators=(',', ':'), sort_keys=True) == '[1,2,3,{"4":5,"6":7}]'
+
 
     def test_basic_decoding(self):
         obj = ['foo', {'bar': ['baz', None, 1.0, 2]}]
@@ -50,6 +52,24 @@ class TestMson(object):
         assert mson.load(io)[0] == 'streaming API'
 
 
+    def test_mson_decoding(self):
+        obj = ['foo#', {'bar': ['baz', None, 1.0, 2]}]
+        test_string = """
+        [
+            # This is a test comment
+            "foo#", {
+                "bar": [
+                    "baz",
+                    null,
+                    1.0,
+                    2,
+                ],
+            },
+        ]
+        """
+        assert mson.loads(test_string) == obj
+
+        
     def test_specialized_decoding(self):
         assert mson.loads('{"__complex__": true, "real": 1, "imag": 2}', object_hook=as_complex) == (1+2j)
         assert mson.loads('1.1', parse_float=Decimal) == Decimal('1.1')
