@@ -40,7 +40,7 @@ class TestMson(object):
 
     def test_basic_encoding(self):
         mydict = {'4': 5, '6': 7}
-        assert mson.dumps([1,2,3,mydict], separators=(',', ':')) == '[1,2,3,{"4":5,"6":7}]'
+        assert mson.dumps([1,2,3,mydict], separators=(',', ':'), sort_keys=True) == '[1,2,3,{"4":5,"6":7}]'
 
     def test_basic_decoding(self):
         obj = ['foo', {'bar': ['baz', None, 1.0, 2]}]
