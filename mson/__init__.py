@@ -135,9 +135,8 @@ def load(fp, *, cls=None, object_hook=None, parse_float=None,
     To use a custom ``JSONDecoder`` subclass, specify it with the ``cls``
     kwarg; otherwise ``JSONDecoder`` is used.
     """
-    s = fp.read()
     return loads(
-        s, cls=cls, object_hook=object_hook, parse_float=parse_float,
+        fp.read(), cls=cls, object_hook=object_hook, parse_float=parse_float,
         parse_int=parse_int, parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
 
 
